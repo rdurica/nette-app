@@ -20,9 +20,9 @@
 		}
 	},
 	"scripts": {
-		"post-install-cmd": [
-			"mkdir temp temp/cache log",
-			"chmod -R 777 temp log"
+		"post-create-project-cmd": [
+			"php -r \"mkdir('temp/cache', 0777, true);\"",
+			"php -r \"mkdir('log');\""
 		]
 	},
 	"minimum-stability": "stable",
