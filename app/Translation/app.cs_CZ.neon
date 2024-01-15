@@ -1,0 +1,5 @@
+# App
+menu:
+  appName: 'App name'
+  login: 'Přihlásit'
+  logout: 'Odhlásit'

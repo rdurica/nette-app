@@ -1,0 +1,26 @@
+search:
+	-
+		in: %appDir%
+		classes:
+			- *Factory
+			- *Facade
+
+session:
+	debugger: TRUE
+
+extensions:
+    rdurica.core: Rdurica\Core\Extension\CoreExtension
+    securityAnnotations: Nepada\Bridges\SecurityAnnotationsDI\SecurityAnnotationsExtension
+    translation: Contributte\Translation\DI\TranslationExtension
+
+services:
+	- App\Router\RouterFactory::createRouter
+
+translation:
+	locales:
+		whitelist: [cs]
+		default: cs
+		fallback: [cs]
+	dirs:
+		- %appDir%/Translation
+	returnOriginalMessage: true # to not translate undefined messages, default is true
