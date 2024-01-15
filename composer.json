@@ -21,8 +21,8 @@
 	},
 	"scripts": {
 		"post-install-cmd": [
-			"chmod -R 777 temp",
-			"chmod -R 777 log"
+			"mkdir temp temp/cache log",
+			"chmod -R 777 temp log"
 		]
 	},
 	"minimum-stability": "stable",
