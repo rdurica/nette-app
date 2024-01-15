@@ -23,10 +23,10 @@ final class Error4xxPresenter extends Presenter
     /**
      * @throws BadRequestException
      */
-    public function startup(): void
+    protected function startup(): void
     {
         parent::startup();
-        if (!$this->getRequest()->isMethod(Request::FORWARD)) {
+        if (!$this->getRequest()?->isMethod(Request::FORWARD)) {
             $this->error();
         }
     }
@@ -36,7 +36,7 @@ final class Error4xxPresenter extends Presenter
     {
         // load template 403.latte or 404.latte or ... 4xx.latte
         $file = __DIR__ . "/../../vendor/rdurica/core/src/Templates/Error/{$exception->getCode()}.latte";
-        $this->template->setFile(
+        $this->getTemplate()->setFile(
             is_file($file) ? $file : __DIR__ . '/../../vendor/rdurica/core/src/Templates/Error/4xx.latte'
         );
     }

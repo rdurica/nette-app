@@ -12,7 +12,9 @@
 		"contributte/translation": "^2.0"
 	},
 	"require-dev": {
-		"nette/tester": "^2.4"
+		"nette/tester": "^2.4",
+		"squizlabs/php_codesniffer": "^3.8",
+		"phpstan/phpstan": "^1.10"
 	},
 	"autoload": {
 		"psr-4": {
@@ -20,6 +22,9 @@
 		}
 	},
 	"scripts": {
+		"phpstan": "vendor/bin/phpstan analyse -l 9 app/",
+		"phpcs": "phpcs --standard=PSR12 app/",
+		"phpcbf": "phpcbf --standard=PSR12 app/",
 		"post-create-project-cmd": [
 			"php -r \"mkdir('temp/cache', 0777, true);\"",
 			"php -r \"mkdir('log');\""
