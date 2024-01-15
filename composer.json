@@ -19,6 +19,12 @@
 			"App\\": "app"
 		}
 	},
+	"scripts": {
+		"post-install-cmd": [
+			"chmod -R 777 temp",
+			"chmod -R 777 log"
+		]
+	},
 	"minimum-stability": "stable",
 	"config": {
 		"allow-plugins": {
