@@ -1,6 +1,6 @@
 {
-	"name": "rdurica/app_name",
-	"description": "Fun tasks & challenges for memorable birthday celebrations! Videos, images, quizzes & more!",
+	"name": "rdurica/nette-app",
+	"description": "Nette application skeleton with packages and configuration",
 	"keywords": ["nette"],
 	"type": "project",
 	"license": ["MIT"],
