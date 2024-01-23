@@ -1,0 +1,13 @@
+# dev environment
+session:
+  debugger: true
+  autoStart: always
+  expiration: 14 days
+
+tracy:
+  showBar: true
+
+di:
+  export:
+    parameters: no
+    tags: no

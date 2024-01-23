@@ -15,12 +15,12 @@
         <!-- Collapsible wrapper -->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <!-- Navbar brand -->
-            <a class="navbar-brand mt-2 mt-lg-0" n:href="Home:">
+            <a class="navbar-brand mt-2 mt-lg-0" n:href=":Main:Home:">
                 <img src="{$basePath}/favicon.png"
                      height="35"
-                     alt="B-day"
+                     alt="Logo"
                      loading="lazy"
-                /> {_app.menu.appName}
+                /> {_main.menu.appName}
             </a>
         </div>
         <!-- Right elements -->
@@ -49,7 +49,7 @@
 {*                        <a class="dropdown-item" n:href="Home:">Item 2</a>*}
 {*                    </li>*}
 {*                    <li n:if="$user->isLoggedIn()">*}
-{*                        <a class="dropdown-item text-danger" n:href="signOut!">{_app.menu.logout}</a>*}
+{*                        <a class="dropdown-item text-danger" n:href="signOut!">{main.menu.logout}</a>*}
 {*                    </li>*}
 {*                </ul>*}
 {*            </div>*}

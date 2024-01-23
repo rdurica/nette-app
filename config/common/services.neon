@@ -1,0 +1,5 @@
+services:
+	- App\Main\Router\RouterFactory
+	router:
+		type: Nette\Application\IRouter
+		factory: @App\Main\Router\RouterFactory::create

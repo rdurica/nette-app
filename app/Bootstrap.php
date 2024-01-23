@@ -1,10 +1,10 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace app;
+namespace App;
 
 use Nette\Bootstrap\Configurator;
+
+use function dirname;
 
 /**
  * Bootstrap.
@@ -17,12 +17,12 @@ class Bootstrap
 {
     public static function boot(): Configurator
     {
-        $configurator = new Configurator();
         $appDir = dirname(__DIR__);
+        $environment = getenv()['ENV'];
 
-        $configurator->setDebugMode((bool)getenv()["DEBUG"]); // enable for your remote IP
+        $configurator = new Configurator();
+        $configurator->setDebugMode($environment === 'dev');
         $configurator->enableTracy($appDir . '/log');
-
         $configurator->setTempDirectory($appDir . '/temp');
 
         $configurator->createRobotLoader()
@@ -31,9 +31,10 @@ class Bootstrap
         $configurator->addDynamicParameters([
             'env' => getenv(),
         ]);
-        $configurator->addConfig($appDir . '/config/common.neon');
-        $configurator->addConfig($appDir . '/config/services.neon');
-        $configurator->addConfig($appDir . '/config/database.neon');
+
+        $configurator->addConfig($appDir . '/config/common/application.neon');
+        $configurator->addConfig($appDir . '/config/common/services.neon');
+        $configurator->addConfig($appDir . '/config/' . $environment . '/config.neon');
 
         return $configurator;
     }

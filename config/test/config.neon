@@ -1,0 +1,13 @@
+# test environment
+session:
+  debugger: false
+  autoStart: smart
+  expiration: 14 days
+
+tracy:
+  showBar: false
+
+di:
+  export:
+    parameters: no
+    tags: no

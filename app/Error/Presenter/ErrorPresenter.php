@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace App\Presenter;
+namespace App\Error\Presenter;
 
 use Nette\Application\BadRequestException;
 use Nette\Application\Helpers;
@@ -27,11 +25,9 @@ final class ErrorPresenter implements IPresenter
 {
     use SmartObject;
 
-    public function __construct(
-        private readonly ILogger $logger,
-    ) {
+    public function __construct(private readonly ILogger $logger)
+    {
     }
-
 
     public function run(Request $request): Response
     {
@@ -39,14 +35,15 @@ final class ErrorPresenter implements IPresenter
 
         if ($exception instanceof BadRequestException) {
             [$module, , $sep] = Helpers::splitName($request->getPresenterName());
+
             return new ForwardResponse($request->setPresenterName($module . $sep . 'Error4xx'));
         }
-
         $this->logger->log($exception, ILogger::EXCEPTION);
+
         return new CallbackResponse(
             function (IRequest $httpRequest, IResponse $httpResponse): void {
                 if (preg_match('#^text/html(?:;|$)#', (string)$httpResponse->getHeader('Content-Type'))) {
-                    require __DIR__ . '/../../vendor/rdurica/core/src/Templates/Error/500.phtml';
+                    require __DIR__ . '/../../../vendor/rdurica/core/src/Templates/Error/500a.phtml';
                 }
             }
         );

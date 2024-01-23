@@ -1,8 +1,6 @@
-<?php
+<?php declare(strict_types=1);
 
-declare(strict_types=1);
-
-namespace App\Presenter;
+namespace App\Error\Presenter;
 
 use Nette\Application\BadRequestException;
 use Nette\Application\Request;
@@ -26,18 +24,18 @@ final class Error4xxPresenter extends Presenter
     protected function startup(): void
     {
         parent::startup();
+
         if (!$this->getRequest()?->isMethod(Request::FORWARD)) {
             $this->error();
         }
     }
 
-
     public function renderDefault(BadRequestException $exception): void
     {
         // load template 403.latte or 404.latte or ... 4xx.latte
-        $file = __DIR__ . "/../../vendor/rdurica/core/src/Templates/Error/{$exception->getCode()}.latte";
+        $file = __DIR__ . "/../../../vendor/rdurica/core/src/Templates/Error/{$exception->getCode()}.latte";
         $this->getTemplate()->setFile(
-            is_file($file) ? $file : __DIR__ . '/../../vendor/rdurica/core/src/Templates/Error/4xx.latte'
+            is_file($file) ? $file : __DIR__ . '/../../../vendor/rdurica/core/src/Templates/Error/4xx.latte'
         );
     }
 }

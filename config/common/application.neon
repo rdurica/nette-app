@@ -1,0 +1,29 @@
+parameters:
+
+application:
+	catchExceptions: no
+	errorPresenter: Error:Error
+	mapping:
+		Main: [App\Main, *, Presenter\*Presenter]
+		Error: [App\Error, *, Presenter\*Presenter]
+
+extensions:
+	rdurica.core: Rdurica\Core\Extension\CoreExtension
+	securityAnnotations: Nepada\Bridges\SecurityAnnotationsDI\SecurityAnnotationsExtension
+	translation: Contributte\Translation\DI\TranslationExtension
+
+database:
+	dsn: %env.DB_DNS%
+	user: %env.DB_USERNAME%
+	password: %env.DB_PASSWORD%
+	options:
+		lazy: yes
+
+translation:
+	locales:
+		whitelist: [cs]
+		default: cs
+		fallback: [cs]
+	dirs:
+		- %appDir%/*/Translation
+	returnOriginalMessage: true
