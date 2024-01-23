@@ -1,4 +1,4 @@
-# Core
+# Nette app
 
 [![PHP](https://img.shields.io/badge/PHP-8.3-blue.svg)](http://php.net)
 ![GitHub release (with filter)](https://img.shields.io/github/v/release/rdurica/nette-app)
@@ -8,7 +8,7 @@ Nette app is a complete and flexible starting point for web application developm
 version and the Nette framework. It provides a foundation with common configurations and best practices to help you
 kickstart your project quickly.
 
-![image](https://github.com/rdurica/nette-app/assets/16089770/65dab104-d489-4025-b12f-87bbf0b57a09)
+![1](https://github.com/rdurica/nette-app/assets/16089770/cd64d9c6-3b17-48b6-908c-e2b2b6db5221)
 
 ## Create new project
 
