@@ -9,6 +9,7 @@ application:
 
 extensions:
 	rdurica.core: Rdurica\Core\Extension\CoreExtension
+	rdurica.coreAcl: Rdurica\CoreAcl\Extension\Extension
 	securityAnnotations: Nepada\Bridges\SecurityAnnotationsDI\SecurityAnnotationsExtension
 	translation: Contributte\Translation\DI\TranslationExtension
 

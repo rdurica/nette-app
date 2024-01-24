@@ -7,8 +7,8 @@
 	"require": {
 		"php": ">= 8.3",
 		"rdurica/core": "dev-main",
+		"rdurica/core_acl": "dev-main",
 		"tracy/tracy": "^2.9",
-		"nepada/security-annotations": "^5.0",
 		"contributte/translation": "^2.0",
 		"nette/utils": "^4.0",
 		"nette/robot-loader": "^4.0",
@@ -27,9 +27,13 @@
 		}
 	},
 	"scripts": {
-		"phpstan": "vendor/bin/phpstan analyse -l 9 app/",
-		"phpcs": "phpcs --standard=PSR12 app/",
-		"phpcbf": "phpcbf --standard=PSR12 app/",
+		"all-checks": [
+			"@phpstan",
+			"@phpcs"
+		],
+		"phpstan": "vendor/bin/phpstan analyse -l 8 app/",
+		"phpcs": "phpcs --standard=phpcs.xml app/",
+		"phpcbf": "phpcbf --standard=phpcs.xml app/",
 		"post-create-project-cmd": [
 			"php -r \"mkdir('temp/cache', 0777, true);\"",
 			"php -r \"mkdir('log');\""
