@@ -22,6 +22,7 @@ final class RouterFactory
 
     public function create(): RouteList
     {
+        $this->addAuthModule();
         $this->addMainModule();
 
         return $this->router;
@@ -31,5 +32,11 @@ final class RouterFactory
     {
         $this->router[] = $list = new RouteList('Main');
         $list->addRoute('<presenter>/<action>[/<id>]', 'Home:default');
+    }
+
+    protected function addAuthModule(): void
+    {
+        $this->router[] = $list = new RouteList('Auth');
+        $list->addRoute('auth/<presenter>/<action>[/<id>]', 'Sign:in');
     }
 }

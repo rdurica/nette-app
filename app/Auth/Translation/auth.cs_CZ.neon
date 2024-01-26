@@ -1,0 +1,12 @@
+# Auth
+label:
+  login: 'Přihlásit'
+  logout: 'Odhlásit'
+  username: 'Uživatelské jméno'
+  password: 'Heslo'
+  loginToYourAccount: 'Přihlaste se prosím ke svému účtu'
+
+flash:
+  disabledAccount: 'Váš účet je zablokován. Prosím, kontaktujte naši zákaznickou podporu.'
+  invalidCredentials: 'Zadané uživatelské jméno nebo heslo není správné.'
+  authenticationFailed: 'Omlouváme se, došlo k chybě při přihlašování. Zkuste to prosím znovu nebo kontaktujte naši podporu.'

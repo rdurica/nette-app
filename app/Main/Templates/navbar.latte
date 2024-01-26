@@ -32,27 +32,27 @@
 {*            </a>*}
 
             <!-- Avatar -->
-{*            <div class="dropdown">*}
-{*                <a class="dropdown-toggle d-flex align-items-center hidden-arrow"*}
-{*                   href="#"*}
-{*                   id="navbarDropdownMenuAvatar"*}
-{*                   role="button"*}
-{*                   data-mdb-toggle="dropdown"*}
-{*                   aria-expanded="false">*}
-{*                    <i class="fa fa-user-circle"></i>&nbsp;Username|capitalize}*}
-{*                </a>*}
-{*                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">*}
-{*                    <li>*}
-{*                        <a class="dropdown-item" n:href="Home:">Item 1</a>*}
-{*                    </li>*}
-{*                    <li>*}
-{*                        <a class="dropdown-item" n:href="Home:">Item 2</a>*}
-{*                    </li>*}
-{*                    <li n:if="$user->isLoggedIn()">*}
-{*                        <a class="dropdown-item text-danger" n:href="signOut!">{main.menu.logout}</a>*}
-{*                    </li>*}
-{*                </ul>*}
-{*            </div>*}
+            <div class="dropdown">
+                <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+                   href="#"
+                   id="navbarDropdownMenuAvatar"
+                   role="button"
+                   data-mdb-toggle="dropdown"
+                   aria-expanded="false">
+                    <i class="fa fa-user-circle"></i>&nbsp;{$user?->getIdentity()?->getUsername()|capitalize}
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuAvatar">
+                    <li>
+                        <a class="dropdown-item" n:href="Home:">Item 1</a>
+                    </li>
+                    <li>
+                        <a class="dropdown-item" n:href="Home:">Item 2</a>
+                    </li>
+                    <li n:if="$user->isLoggedIn()">
+                        <a class="dropdown-item text-danger" n:href="signOut!">{_auth.label.logout}</a>
+                    </li>
+                </ul>
+            </div>
         </div>
         <!-- Right elements -->
     </div>

@@ -3,6 +3,7 @@
 namespace App\Main\Presenter;
 
 use Rdurica\Core\Presenter\Presenter;
+use Rdurica\Core\Presenter\RequireLoggedUser;
 use Rdurica\Core\Presenter\SetMdbTemplateLayout;
 
 /**
@@ -15,6 +16,7 @@ use Rdurica\Core\Presenter\SetMdbTemplateLayout;
 final class HomePresenter extends Presenter
 {
     use SetMdbTemplateLayout;
+    use RequireLoggedUser;
 
     /** @var string Presenter name. */
     public const PRESENTER_NAME = 'Home';

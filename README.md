@@ -8,7 +8,9 @@ Nette app is a complete and flexible starting point for web application developm
 version and the Nette framework. It provides a foundation with common configurations and best practices to help you
 kickstart your project quickly.
 
-![1](https://github.com/rdurica/nette-app/assets/16089770/cd64d9c6-3b17-48b6-908c-e2b2b6db5221)
+![00](https://github.com/rdurica/nette-app/assets/16089770/65734887-11a6-4318-875b-cadbfe60c11a)
+![01](https://github.com/rdurica/nette-app/assets/16089770/c69ebb86-a581-4416-a4a9-72f312ae1b29)
+
 
 ## Create new project
 

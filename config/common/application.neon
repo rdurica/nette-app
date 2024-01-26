@@ -6,9 +6,10 @@ application:
 	mapping:
 		Main: [App\Main, *, Presenter\*Presenter]
 		Error: [App\Error, *, Presenter\*Presenter]
+		Auth: [App\Auth, *, Presenter\*Presenter]
 
 extensions:
-	rdurica.core: Rdurica\Core\Extension\CoreExtension
+	rdurica.core: Rdurica\Core\Extension\Extension
 	rdurica.coreAcl: Rdurica\CoreAcl\Extension\Extension
 	securityAnnotations: Nepada\Bridges\SecurityAnnotationsDI\SecurityAnnotationsExtension
 	translation: Contributte\Translation\DI\TranslationExtension
