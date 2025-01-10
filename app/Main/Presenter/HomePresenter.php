@@ -9,15 +9,11 @@ use Rdurica\Core\Presenter\SetMdbTemplateLayout;
 /**
  * HomePresenter.
  *
- * @package   App\Presenter
- * @copyright Copyright (c) 2024, Robert Durica
- * @since     2024-01-15
+ * @copyright Copyright (c) 2025, Robert Durica
+ * @since     2025-01-10
  */
 final class HomePresenter extends Presenter
 {
     use SetMdbTemplateLayout;
     use RequireLoggedUser;
-
-    /** @var string Presenter name. */
-    public const PRESENTER_NAME = 'Home';
 }

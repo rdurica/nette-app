@@ -27,11 +27,7 @@ use Rdurica\CoreAcl\Model\Service\AuthenticationService;
 final class SignPresenter extends Presenter
 {
     use SetMdbTemplateLayout;
-
     use RequireAnonymousUser;
-
-    /** @var string Presenter name. */
-    public const PRESENTER_NAME = 'Sign';
 
     /**
      * Constructor.
@@ -90,16 +86,13 @@ final class SignPresenter extends Presenter
             $this->user->login($identity);
         } catch (DisabledAccountException) {
             $message = $this->translator->translate('auth.flash.disabledAccount');
-
-            $this->flashMessage($message, FlashType::ERROR);
+            $this->addFlashMessage($message);
         } catch (InvalidCredentialsException) {
             $message = $this->translator->translate('auth.flash.invalidCredentials');
-
-            $this->flashMessage($message, FlashType::WARNING);
+            $this->addFlashMessage($message, FlashType::WARNING);
         } catch (AuthenticationException) {
             $message = $this->translator->translate('auth.flash.authenticationFailed');
-
-            $this->flashMessage($message, FlashType::ERROR);
+            $this->addFlashMessage($message, FlashType::ERROR);
         }
 
         $this->redirect('this');
